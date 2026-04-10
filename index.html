@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoodMeal AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <h1 class="logo">MoodMeal <span>AI</span></h1>
+        <div class="profile-icon"></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <h2>How are you feeling today?</h2>
+        <p>Pour your thoughts out. We'll find the perfect combo for your mood.</p>
+        <div class="input-container">
+          <textarea id="mood-input" placeholder="e.g. It was a long day at work and I just want to relax..."></textarea>
+          <button id="analyze-btn">
+            <span class="btn-text">Analyze My Mood</span>
+            <div class="btn-loader hidden"></div>
+          </button>
+        </div>
+      </section>
+
+      <section class="results-section hidden" id="results">
+        <div class="mood-widget">
+          <div class="mood-icon" id="detected-icon">🤔</div>
+          <h3 id="detected-text">Analyzing...</h3>
+        </div>
+
+        <div class="recommendations-grid">
+          <!-- Food Card -->
+          <div class="rec-card food-card">
+            <div class="card-header">
+              <span class="card-icon">🍔</span>
+              <h4>Comfort Food</h4>
+            </div>
+            <p id="food-rec">Mac & Cheese</p>
+            <button class="action-btn">Order Now</button>
+          </div>
+
+          <!-- Movie Card -->
+          <div class="rec-card movie-card">
+            <div class="card-header" style="justify-content: space-between;">
+              <div style="display:flex; align-items:center;">
+                <span class="card-icon">🎬</span>
+                <h4>Movie Match</h4>
+              </div>
+              <select id="movie-lang-select" style="padding: 0.3rem; border-radius: 8px; background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255, 255, 255, 0.2); outline: none; cursor: pointer;">
+                <option value="EN">English</option>
+                <option value="TA">Tamil</option>
+                <option value="KO">Korean</option>
+              </select>
+            </div>
+            <p id="movie-rec">The Pursuit of Happyness</p>
+            <button class="action-btn">Watch Trailer</button>
+          </div>
+
+          <!-- Music Card -->
+          <div class="rec-card music-card">
+            <div class="card-header">
+              <span class="card-icon">🎵</span>
+              <h4>Music Playlist</h4>
+            </div>
+            <p id="music-rec">Acoustic Chill</p>
+            <button class="action-btn">Listen on Spotify</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
